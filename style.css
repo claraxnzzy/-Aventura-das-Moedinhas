@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --pink: #f062a8;
+  --deep-pink: #c93683;
+  --ink: #422744;
+  --muted: #876f8a;
+  --paper: #fffafd;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  color: var(--ink);
+  font-family: 'Nunito', system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 12% 18%, #ffe0f0 0 8%, transparent 8.5%),
+    radial-gradient(circle at 90% 82%, #e5e1ff 0 10%, transparent 10.5%),
+    linear-gradient(135deg, #fff3fa, #f4f1ff);
+}
+
+.game-shell {
+  width: min(100%, 980px);
+  background: rgba(255,255,255,.88);
+  border: 1px solid #ffffff;
+  border-radius: 28px;
+  padding: clamp(16px, 3vw, 30px);
+  box-shadow: 0 22px 70px rgba(115, 65, 117, .16);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  color: var(--deep-pink);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+  margin: 0 0 4px;
+}
+
+h1 { font-size: clamp(1.35rem, 3.7vw, 2.1rem); margin: 0; line-height: 1.2; }
+.subtitle { color: var(--muted); margin: 7px 0 0; }
+
+.small-button, .primary-button, .jump-button {
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  border: 0;
+  transition: transform .15s, filter .15s;
+}
+.small-button:hover, .primary-button:hover, .jump-button:hover { transform: translateY(-2px); filter: brightness(1.03); }
+.small-button {
+  white-space: nowrap;
+  padding: 11px 15px;
+  border-radius: 14px;
+  color: var(--deep-pink);
+  background: #ffe5f2;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.stat {
+  padding: 10px 14px;
+  background: #fff1f8;
+  border: 1px solid #ffe0ef;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.stat span { color: #865b7d; font-size: .92rem; font-weight: 800; }
+.stat strong { font-size: 1.2rem; }
+
+.canvas-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2px solid #f8d9ed;
+  background: #c9f1ff;
+}
+canvas { display: block; width: 100%; height: auto; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(58, 36, 75, .28);
+  backdrop-filter: blur(4px);
+}
+.overlay.hidden { display: none; }
+.overlay-card {
+  width: min(100%, 390px);
+  text-align: center;
+  padding: 25px;
+  border-radius: 24px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 14px 40px rgba(52, 31, 67, .18);
+}
+.hero-icon { font-size: 3.4rem; }
+.overlay-card h2 { margin: 7px 0; font-size: 1.55rem; }
+.overlay-card p { color: var(--muted); line-height: 1.5; margin: 0 0 18px; }
+.primary-button {
+  padding: 13px 22px;
+  color: white;
+  background: linear-gradient(135deg, var(--pink), var(--deep-pink));
+  border-radius: 14px;
+  box-shadow: 0 7px 18px #ef7db8a8;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 15px;
+}
+.controls p { color: var(--muted); margin: 0; font-size: .92rem; }
+.jump-button {
+  min-width: 125px;
+  padding: 13px 20px;
+  color: white;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ff8bc5, #d83c91);
+  box-shadow: 0 5px 0 #ad2e74;
+  touch-action: manipulation;
+}
+.jump-button:active { transform: translateY(3px); box-shadow: 0 2px 0 #ad2e74; }
+footer { text-align: center; color: #aa91aa; font-size: .8rem; margin-top: 19px; }
+
+@media (max-width: 560px) {
+  body { padding: 10px; }
+  .game-shell { border-radius: 20px; padding: 14px; }
+  .top { align-items: flex-start; }
+  .small-button { padding: 9px 10px; font-size: .82rem; }
+  .subtitle { font-size: .9rem; }
+  .stat { padding: 9px 8px; flex-direction: column; gap: 2px; text-align: center; }
+  .stat span { font-size: .78rem; }
+  .controls { flex-direction: column; }
+  .jump-button { width: 100%; }
+}

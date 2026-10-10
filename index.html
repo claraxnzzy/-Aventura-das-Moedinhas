@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura das Moedinhas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-shell">
+        <header class="top">
+            <div>
+                <p class="eyebrow">MINI GAME 2D</p>
+                <h1>✨ Aventura das Moedinhas</h1>
+                <p class="subtitle">
+                    Pule os obstáculos e pegue moedas!
+                </p>
+            </div>
+            <button id="restartTop" class="small-button">
+                ↻ Reiniciar
+            </button>
+        </header>
+
+        <section class="hud">
+            <div class="stat">
+                <span>🪙 Moedas</span>
+                <strong id="coins">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>⭐ Pontos</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>❤️ Vidas</span>
+                <strong id="lives">3</strong>
+            </div>
+        </section>
+
+        <div class="canvas-wrap">
+            <canvas id="game" width="900" height="440"></canvas>
+
+            <div id="overlay" class="overlay">
+                <div class="overlay-card">
+                    <div class="hero-icon">🦊</div>
+                    <h2 id="overlayTitle">
+                        Pronta para a aventura?
+                    </h2>
+
+                    <p id="overlayText">
+                        Use Espaço ou a seta para cima para pular.
+                        Colete moedas e desvie dos obstáculos!
+                    </p>
+
+                    <button id="startButton" class="primary-button">
+                        ▶ Jogar agora
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p>⌨️ Use Espaço ou ↑ para pular</p>
+            <button id="jumpButton" class="jump-button">
+                ⬆ PULAR
+            </button>
+        </div>
+
+        <footer>
+            Feito com HTML, CSS e JavaScript 💖
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
